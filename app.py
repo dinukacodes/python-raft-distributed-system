@@ -213,5 +213,91 @@ def get_file_chunks(file_id):
         'chunks': chunks_info
     })
 
+@app.route('/api/nodes/<node_id>/kill', methods=['POST'])
+def kill_node(node_id):
+    """Simulate killing a node by disconnecting it"""
+    if node_id not in cluster.nodes:
+        return jsonify({'error': 'Node not found'}), 404
+    
+    try:
+        # Disconnect the node
+        if cluster.nodes[node_id]['client']:
+            cluster.nodes[node_id]['client'].close()
+        cluster.nodes[node_id]['client'] = None
+        cluster.nodes[node_id]['pubsub'] = None
+        cluster.nodes[node_id]['status'] = 'inactive'
+        return jsonify({'status': 'success', 'message': f'Node {node_id} killed'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/nodes/<node_id>/start', methods=['POST'])
+def start_node(node_id):
+    """Start a node by reconnecting to it"""
+    if node_id not in cluster.nodes:
+        return jsonify({'error': 'Node not found'}), 404
+    
+    try:
+        if cluster.reconnect_node(node_id):
+            return jsonify({'status': 'success', 'message': f'Node {node_id} started'})
+        return jsonify({'error': f'Failed to start node {node_id}'}), 500
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/nodes', methods=['POST'])
+def add_node():
+    """Add a new node to the cluster"""
+    data = request.json
+    if not data or 'id' not in data or 'host' not in data or 'port' not in data:
+        return jsonify({'error': 'Missing required fields'}), 400
+    
+    node_id = data['id']
+    if node_id in cluster.nodes:
+        return jsonify({'error': 'Node already exists'}), 400
+    
+    try:
+        # Add node to config
+        cluster.config['nodes'].append({
+            'id': node_id,
+            'host': data['host'],
+            'port': data['port'],
+            'role': data.get('role', 'replica')
+        })
+        
+        # Initialize the new node
+        client = redis.Redis(
+            host=data['host'],
+            port=data['port'],
+            decode_responses=True,
+            socket_timeout=1,
+            retry_on_timeout=True
+        )
+        
+        # Test connection
+        client.ping()
+        pubsub = client.pubsub(ignore_subscribe_messages=True)
+        pubsub.subscribe('heartbeat')
+        
+        cluster.nodes[node_id] = {
+            'client': client,
+            'role': data.get('role', 'replica'),
+            'status': 'active',
+            'last_heartbeat': time.time(),
+            'pubsub': pubsub
+        }
+        
+        return jsonify({
+            'status': 'success',
+            'message': f'Node {node_id} added successfully',
+            'node': {
+                'id': node_id,
+                'host': data['host'],
+                'port': data['port'],
+                'role': data.get('role', 'replica'),
+                'status': 'active'
+            }
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) 

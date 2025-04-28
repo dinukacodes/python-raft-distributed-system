@@ -105,6 +105,34 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+        
+        /* Node Management Styles */
+        .node-controls {
+            margin-bottom: 20px;
+        }
+        .node-control-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+        }
+        .node-actions {
+            margin-top: 10px;
+        }
+        .add-node {
+            margin-top: 20px;
+        }
+        .add-node input, .add-node select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .add-node button {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +145,30 @@
         </div>
         <div class="quorum-status" id="quorumStatus">
             <!-- Quorum status will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Node Management</h2>
+        <div class="node-controls">
+            <h3>Manage Existing Nodes</h3>
+            <div id="nodeControls">
+                <!-- Node controls will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="add-node">
+            <h3>Add New Node</h3>
+            <div>
+                <input type="text" id="newNodeId" placeholder="Node ID">
+                <input type="text" id="newNodeHost" placeholder="Host">
+                <input type="number" id="newNodePort" placeholder="Port">
+                <select id="newNodeRole">
+                    <option value="replica">Replica</option>
+                    <option value="primary">Primary</option>
+                </select>
+                <button class="btn-primary" onclick="addNewNode()">Add Node</button>
+            </div>
         </div>
     </div>
 
@@ -332,13 +384,126 @@
             }
         }
 
-        // Initialize and update periodically
-        document.addEventListener('DOMContentLoaded', () => {
+        // Update node controls
+        async function updateNodeControls() {
+            try {
+                const response = await fetch('/api/cluster/status');
+                const data = await response.json();
+                const nodeControlsDiv = document.getElementById('nodeControls');
+                
+                nodeControlsDiv.innerHTML = Object.entries(data).map(([nodeId, info]) => `
+                    <div class="node-control-item">
+                        <h4>${nodeId}</h4>
+                        <p>Status: ${info.status}</p>
+                        <p>Role: ${info.role}</p>
+                        <div class="node-actions">
+                            ${info.status === 'active' ? 
+                                `<button class="btn-danger" onclick="killNode('${nodeId}')">Kill Node</button>` :
+                                `<button class="btn-success" onclick="startNode('${nodeId}')">Start Node</button>`
+                            }
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error updating node controls:', error);
+            }
+        }
+
+        // Kill a node
+        async function killNode(nodeId) {
+            try {
+                const response = await fetch(`/api/nodes/${nodeId}/kill`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.status === 'success') {
+                    alert(data.message);
+                    updateClusterStatus();
+                    updateNodeControls();
+                } else {
+                    alert(data.error);
+                }
+            } catch (error) {
+                console.error('Error killing node:', error);
+                alert('Failed to kill node');
+            }
+        }
+
+        // Start a node
+        async function startNode(nodeId) {
+            try {
+                const response = await fetch(`/api/nodes/${nodeId}/start`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.status === 'success') {
+                    alert(data.message);
+                    updateClusterStatus();
+                    updateNodeControls();
+                } else {
+                    alert(data.error);
+                }
+            } catch (error) {
+                console.error('Error starting node:', error);
+                alert('Failed to start node');
+            }
+        }
+
+        // Add a new node
+        async function addNewNode() {
+            const nodeId = document.getElementById('newNodeId').value;
+            const host = document.getElementById('newNodeHost').value;
+            const port = document.getElementById('newNodePort').value;
+            const role = document.getElementById('newNodeRole').value;
+            
+            if (!nodeId || !host || !port) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/nodes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        id: nodeId,
+                        host: host,
+                        port: parseInt(port),
+                        role: role
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.status === 'success') {
+                    alert(data.message);
+                    updateClusterStatus();
+                    updateNodeControls();
+                    // Clear form
+                    document.getElementById('newNodeId').value = '';
+                    document.getElementById('newNodeHost').value = '';
+                    document.getElementById('newNodePort').value = '';
+                } else {
+                    alert(data.error);
+                }
+            } catch (error) {
+                console.error('Error adding node:', error);
+                alert('Failed to add node');
+            }
+        }
+
+        // Update the periodic status update to include node controls
+        setInterval(() => {
             updateClusterStatus();
+            updateNodeControls();
             updateFileList();
-            setInterval(updateClusterStatus, 5000);
-            setInterval(updateFileList, 5000);
-        });
+        }, 5000);
+
+        // Initial updates
+        updateClusterStatus();
+        updateNodeControls();
+        updateFileList();
     </script>
 </body>
 </html> 
