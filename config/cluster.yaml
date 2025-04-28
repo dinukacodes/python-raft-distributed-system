@@ -18,4 +18,12 @@ nodes:
 settings:
   replication_factor: 2
   heartbeat_interval: 5
-  chunk_size: 1048576  # 1MB 
+  chunk_size: 1048576  # 1MB
+  quorum:
+    N: 3  # Total nodes
+    W: 2  # Write quorum
+    R: 2  # Read quorum
+  redis_insight:
+    enabled: true
+    port: 8001
+    read_only: true 

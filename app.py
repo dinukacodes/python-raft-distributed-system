@@ -3,6 +3,9 @@ import redis
 from flask import Flask, request, jsonify, send_file, render_template
 from werkzeug.utils import secure_filename
 from cluster_manager import ClusterManager
+import hashlib
+import json
+import time
 
 app = Flask(__name__)
 cluster = ClusterManager('config/cluster.yaml')
@@ -23,14 +26,10 @@ def index():
 
 @app.route('/api/kv/<key>', methods=['GET'])
 def get_value(key):
-    node_id = cluster.get_node_for_key(key)
-    try:
-        value = cluster.nodes[node_id]['client'].get(key)
-        if value is None:
-            return jsonify({'error': 'Key not found'}), 404
-        return jsonify({'value': value, 'node': node_id})
-    except redis.ConnectionError:
-        return jsonify({'error': f'Node {node_id} is unavailable'}), 503
+    value = cluster.read_with_quorum(key)
+    if value is None:
+        return jsonify({'error': 'Key not found'}), 404
+    return jsonify({'value': value})
 
 @app.route('/api/kv/<key>', methods=['PUT'])
 def set_value(key):
@@ -38,25 +37,15 @@ def set_value(key):
     if not value:
         return jsonify({'error': 'Value is required'}), 400
     
-    node_id = cluster.get_node_for_key(key)
-    try:
-        cluster.nodes[node_id]['client'].set(key, value)
-        cluster.replicate_data(key, value, node_id)
-        return jsonify({'status': 'success', 'node': node_id})
-    except redis.ConnectionError:
-        return jsonify({'error': f'Node {node_id} is unavailable'}), 503
+    if cluster.write_with_quorum(key, value):
+        return jsonify({'status': 'success'})
+    return jsonify({'error': 'Failed to write with quorum'}), 503
 
 @app.route('/api/kv/<key>', methods=['DELETE'])
 def delete_value(key):
-    node_id = cluster.get_node_for_key(key)
-    try:
-        if not cluster.nodes[node_id]['client'].exists(key):
-            return jsonify({'error': 'Key not found'}), 404
-        cluster.nodes[node_id]['client'].delete(key)
-        cluster.replicate_data(key, None, node_id)  # Replicate deletion
-        return jsonify({'status': 'success', 'node': node_id})
-    except redis.ConnectionError:
-        return jsonify({'error': f'Node {node_id} is unavailable'}), 503
+    if cluster.write_with_quorum(key, None):
+        return jsonify({'status': 'success'})
+    return jsonify({'error': 'Failed to delete with quorum'}), 503
 
 @app.route('/api/cluster/status', methods=['GET'])
 def get_cluster_status():
@@ -68,15 +57,16 @@ def list_files():
     """List all available files in the cluster"""
     files = []
     for node_id, node_info in cluster.nodes.items():
-        try:
-            # Get all keys that start with 'file:'
-            keys = node_info['client'].keys('file:*')
-            for key in keys:
-                filename = key.split(':', 1)[1]
-                if filename not in files:
-                    files.append(filename)
-        except redis.ConnectionError:
-            continue
+        if node_info['status'] == 'active':
+            try:
+                # Get all keys that start with 'file:'
+                keys = node_info['client'].keys('file:*:metadata')
+                for key in keys:
+                    file_id = key.split(':')[1]
+                    if file_id not in files:
+                        files.append(file_id)
+            except redis.ConnectionError:
+                continue
     return jsonify({'files': files})
 
 @app.route('/api/files', methods=['POST'])
@@ -90,49 +80,82 @@ def upload_file():
     
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        filepath = os.path.join(UPLOAD_FOLDER, filename)
+        file_id = hashlib.sha256(filename.encode()).hexdigest()
         
-        # Save file in chunks
-        with open(filepath, 'wb') as f:
-            while True:
-                chunk = file.read(cluster.config['settings']['chunk_size'])
-                if not chunk:
-                    break
-                f.write(chunk)
+        # Store file metadata
+        metadata = {
+            'filename': filename,
+            'size': 0,
+            'chunks': 0,
+            'upload_time': time.time()
+        }
         
-        # Store file metadata in Redis cluster
-        file_key = f'file:{filename}'
-        node_id = cluster.get_node_for_key(file_key)
-        try:
-            cluster.nodes[node_id]['client'].hset(file_key, mapping={
-                'path': filepath,
-                'size': os.path.getsize(filepath),
-                'chunks': os.path.getsize(filepath) // cluster.config['settings']['chunk_size'] + 1
-            })
-            cluster.replicate_data(file_key, str({
-                'path': filepath,
-                'size': os.path.getsize(filepath),
-                'chunks': os.path.getsize(filepath) // cluster.config['settings']['chunk_size'] + 1
-            }), node_id)
+        if not cluster.write_with_quorum(f'file:{file_id}:metadata', json.dumps(metadata)):
+            return jsonify({'error': 'Failed to store file metadata'}), 503
+        
+        # Process file in chunks
+        chunk_size = cluster.config['settings']['chunk_size']
+        chunk_index = 0
+        total_size = 0
+        
+        while True:
+            chunk = file.read(chunk_size)
+            if not chunk:
+                break
             
-            return jsonify({'status': 'success', 'filename': filename, 'node': node_id})
-        except redis.ConnectionError:
-            return jsonify({'error': f'Node {node_id} is unavailable'}), 503
+            if not cluster.store_file_chunk(file_id, chunk_index, chunk):
+                return jsonify({'error': f'Failed to store chunk {chunk_index}'}), 503
+            
+            chunk_index += 1
+            total_size += len(chunk)
+        
+        # Update metadata with final size and chunk count
+        metadata['size'] = total_size
+        metadata['chunks'] = chunk_index
+        
+        if not cluster.write_with_quorum(f'file:{file_id}:metadata', json.dumps(metadata)):
+            return jsonify({'error': 'Failed to update file metadata'}), 503
+        
+        return jsonify({
+            'status': 'success',
+            'file_id': file_id,
+            'filename': filename,
+            'size': total_size,
+            'chunks': chunk_index
+        })
     
     return jsonify({'error': 'File type not allowed'}), 400
 
-@app.route('/api/files/<filename>', methods=['GET'])
-def download_file(filename):
-    file_key = f'file:{filename}'
-    node_id = cluster.get_node_for_key(file_key)
+@app.route('/api/files/<file_id>', methods=['GET'])
+def download_file(file_id):
+    # Get file metadata
+    metadata_json = cluster.read_with_quorum(f'file:{file_id}:metadata')
+    if not metadata_json:
+        return jsonify({'error': 'File not found'}), 404
+    
+    metadata = json.loads(metadata_json)
+    filename = metadata['filename']
+    
+    # Create a temporary file to store the reassembled data
+    temp_path = os.path.join(UPLOAD_FOLDER, f'temp_{file_id}')
+    
     try:
-        if not cluster.nodes[node_id]['client'].exists(file_key):
-            return jsonify({'error': 'File not found'}), 404
+        with open(temp_path, 'wb') as f:
+            for chunk_index in range(metadata['chunks']):
+                chunk_data = cluster.get_file_chunk(file_id, chunk_index)
+                if chunk_data is None:
+                    return jsonify({'error': f'Failed to retrieve chunk {chunk_index}'}), 503
+                f.write(chunk_data)
         
-        filepath = cluster.nodes[node_id]['client'].hget(file_key, 'path')
-        return send_file(filepath, as_attachment=True)
-    except redis.ConnectionError:
-        return jsonify({'error': f'Node {node_id} is unavailable'}), 503
+        return send_file(
+            temp_path,
+            as_attachment=True,
+            download_name=filename
+        )
+    finally:
+        # Clean up temporary file
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) 
