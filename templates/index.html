@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedisCluster - Key-Value Store</title>
+    <title>RedisCluster - Distributed Storage System</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -17,27 +17,36 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        input[type="text"], input[type="file"] {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
+        .node-status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
-        button {
-            padding: 8px 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .node {
+            padding: 15px;
+            border-radius: 5px;
+            width: 30%;
+            text-align: center;
         }
-        button:hover {
-            background-color: #45a049;
+        .node.active {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
         }
-        .result {
-            margin-top: 10px;
+        .node.inactive {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        .quorum-status {
             padding: 10px;
-            background-color: #f8f8f8;
-            border-radius: 4px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .quorum-healthy {
+            background-color: #d4edda;
+        }
+        .quorum-degraded {
+            background-color: #fff3cd;
         }
         .file-list {
             margin-top: 20px;
@@ -46,34 +55,91 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
+            padding: 15px;
             border-bottom: 1px solid #ddd;
+            background-color: #f8f9fa;
+        }
+        .file-info {
+            flex: 1;
+        }
+        .file-chunks {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .file-nodes {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            color: black;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <h1>RedisCluster - Key-Value Store</h1>
+    <h1>RedisCluster - Distributed Storage System</h1>
     
+    <div class="section">
+        <h2>Cluster Status</h2>
+        <div class="node-status" id="nodeStatus">
+            <!-- Node status will be populated by JavaScript -->
+        </div>
+        <div class="quorum-status" id="quorumStatus">
+            <!-- Quorum status will be populated by JavaScript -->
+        </div>
+    </div>
+
     <div class="section">
         <h2>Key-Value Operations</h2>
         <div>
             <h3>Set Value</h3>
             <input type="text" id="setKey" placeholder="Key">
             <input type="text" id="setValue" placeholder="Value">
-            <button onclick="setValue()">Set</button>
+            <button class="btn-primary" onclick="setValue()">Set</button>
         </div>
         
         <div>
             <h3>Get Value</h3>
             <input type="text" id="getKey" placeholder="Key">
-            <button onclick="getValue()">Get</button>
+            <button class="btn-success" onclick="getValue()">Get</button>
             <div id="getResult" class="result"></div>
         </div>
         
         <div>
             <h3>Delete Value</h3>
             <input type="text" id="deleteKey" placeholder="Key">
-            <button onclick="deleteValue()">Delete</button>
+            <button class="btn-danger" onclick="deleteValue()">Delete</button>
         </div>
     </div>
     
@@ -82,14 +148,8 @@
         <div>
             <h3>Upload File</h3>
             <input type="file" id="fileInput">
-            <button onclick="uploadFile()">Upload</button>
+            <button class="btn-primary" onclick="uploadFile()">Upload</button>
             <div id="uploadResult" class="result"></div>
-        </div>
-
-        <div>
-            <h3>Download File</h3>
-            <input type="text" id="downloadFilename" placeholder="Filename">
-            <button onclick="downloadFile()">Download</button>
         </div>
 
         <div class="file-list">
@@ -99,6 +159,87 @@
     </div>
 
     <script>
+        // Update cluster status periodically
+        async function updateClusterStatus() {
+            try {
+                const response = await fetch('/api/cluster/status');
+                const data = await response.json();
+                
+                // Update node status
+                const nodeStatusDiv = document.getElementById('nodeStatus');
+                nodeStatusDiv.innerHTML = '';
+                
+                for (const [nodeId, info] of Object.entries(data)) {
+                    const nodeDiv = document.createElement('div');
+                    nodeDiv.className = `node ${info.status}`;
+                    nodeDiv.innerHTML = `
+                        <h3>${nodeId}</h3>
+                        <p>Role: ${info.role}</p>
+                        <p>Status: ${info.status}</p>
+                        <p>Last Heartbeat: ${new Date(info.last_heartbeat * 1000).toLocaleString()}</p>
+                    `;
+                    nodeStatusDiv.appendChild(nodeDiv);
+                }
+                
+                // Update quorum status
+                const quorumStatusDiv = document.getElementById('quorumStatus');
+                const quorumStatus = Object.values(data)[0].quorum_status;
+                quorumStatusDiv.className = `quorum-status quorum-${quorumStatus}`;
+                quorumStatusDiv.innerHTML = `
+                    <h3>Quorum Status: ${quorumStatus.toUpperCase()}</h3>
+                    <p>Write Quorum (W): 2 | Read Quorum (R): 2</p>
+                `;
+            } catch (error) {
+                console.error('Error updating cluster status:', error);
+            }
+        }
+
+        // Update file list with detailed information
+        async function updateFileList() {
+            try {
+                const response = await fetch('/api/files');
+                const data = await response.json();
+                const fileListDiv = document.getElementById('fileList');
+                
+                if (data.files && data.files.length > 0) {
+                    fileListDiv.innerHTML = await Promise.all(data.files.map(async (fileId) => {
+                        const metadataResponse = await fetch(`/api/files/${fileId}/metadata`);
+                        const metadata = await metadataResponse.json();
+                        
+                        return `
+                            <div class="file-item">
+                                <div class="file-info">
+                                    <div><strong>${metadata.filename}</strong></div>
+                                    <div class="file-chunks">Chunks: ${metadata.chunks} | Size: ${(metadata.size / 1024 / 1024).toFixed(2)} MB</div>
+                                    <div class="file-nodes">Stored on: ${metadata.nodes.join(', ')}</div>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn-success" onclick="downloadFile('${fileId}')">Download</button>
+                                    <button class="btn-warning" onclick="showChunkInfo('${fileId}')">Chunk Info</button>
+                                </div>
+                            </div>
+                        `;
+                    })).then(html => html.join(''));
+                } else {
+                    fileListDiv.innerHTML = '<p>No files available</p>';
+                }
+            } catch (error) {
+                console.error('Error updating file list:', error);
+            }
+        }
+
+        // Show chunk information for a file
+        async function showChunkInfo(fileId) {
+            try {
+                const response = await fetch(`/api/files/${fileId}/chunks`);
+                const data = await response.json();
+                alert(JSON.stringify(data, null, 2));
+            } catch (error) {
+                console.error('Error getting chunk info:', error);
+            }
+        }
+
+        // Existing functions with updates
         async function setValue() {
             const key = document.getElementById('setKey').value;
             const value = document.getElementById('setValue').value;
@@ -164,36 +305,26 @@
                 });
                 const data = await response.json();
                 resultDiv.textContent = JSON.stringify(data);
+                updateFileList();
             } catch (error) {
                 resultDiv.textContent = 'Error uploading file';
             }
         }
 
-        async function downloadFile() {
-            const filename = document.getElementById('downloadFilename').value;
-            if (!filename) {
-                alert('Please enter a filename');
-                return;
-            }
-
+        async function downloadFile(fileId) {
             try {
-                const response = await fetch(`/api/files/${filename}`);
+                const response = await fetch(`/api/files/${fileId}`);
                 if (!response.ok) {
                     throw new Error('File not found');
                 }
                 
-                // Create a blob from the response
                 const blob = await response.blob();
-                
-                // Create a download link
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = filename;
+                a.download = fileId;
                 document.body.appendChild(a);
                 a.click();
-                
-                // Clean up
                 window.URL.revokeObjectURL(url);
                 document.body.removeChild(a);
             } catch (error) {
@@ -201,35 +332,13 @@
             }
         }
 
-        async function listFiles() {
-            const fileListDiv = document.getElementById('fileList');
-            try {
-                // Get all keys from Redis that start with 'file:'
-                const response = await fetch('/api/files');
-                const data = await response.json();
-                
-                if (data.files && data.files.length > 0) {
-                    fileListDiv.innerHTML = data.files.map(file => `
-                        <div class="file-item">
-                            <span>${file}</span>
-                            <button onclick="downloadFileByName('${file}')">Download</button>
-                        </div>
-                    `).join('');
-                } else {
-                    fileListDiv.textContent = 'No files available';
-                }
-            } catch (error) {
-                fileListDiv.textContent = 'Error listing files';
-            }
-        }
-
-        async function downloadFileByName(filename) {
-            document.getElementById('downloadFilename').value = filename;
-            await downloadFile();
-        }
-
-        // Load file list when page loads
-        document.addEventListener('DOMContentLoaded', listFiles);
+        // Initialize and update periodically
+        document.addEventListener('DOMContentLoaded', () => {
+            updateClusterStatus();
+            updateFileList();
+            setInterval(updateClusterStatus, 5000);
+            setInterval(updateFileList, 5000);
+        });
     </script>
 </body>
 </html> 

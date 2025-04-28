@@ -157,5 +157,61 @@ def download_file(file_id):
         if os.path.exists(temp_path):
             os.remove(temp_path)
 
+@app.route('/api/files/<file_id>/metadata', methods=['GET'])
+def get_file_metadata(file_id):
+    """Get detailed metadata for a specific file"""
+    metadata_json = cluster.read_with_quorum(f'file:{file_id}:metadata')
+    if not metadata_json:
+        return jsonify({'error': 'File not found'}), 404
+    
+    metadata = json.loads(metadata_json)
+    
+    # Get nodes that have chunks for this file
+    nodes_with_chunks = set()
+    for node_id, node_info in cluster.nodes.items():
+        if node_info['status'] == 'active':
+            try:
+                # Check if any chunk exists for this file
+                keys = node_info['client'].keys(f'file:{file_id}:chunk:*')
+                if keys:
+                    nodes_with_chunks.add(node_id)
+            except redis.ConnectionError:
+                continue
+    
+    metadata['nodes'] = list(nodes_with_chunks)
+    return jsonify(metadata)
+
+@app.route('/api/files/<file_id>/chunks', methods=['GET'])
+def get_file_chunks(file_id):
+    """Get detailed information about file chunks"""
+    metadata_json = cluster.read_with_quorum(f'file:{file_id}:metadata')
+    if not metadata_json:
+        return jsonify({'error': 'File not found'}), 404
+    
+    metadata = json.loads(metadata_json)
+    chunks_info = []
+    
+    for chunk_index in range(metadata['chunks']):
+        chunk_key = f'file:{file_id}:chunk:{chunk_index}'
+        chunk_metadata_json = cluster.read_with_quorum(chunk_key)
+        
+        if chunk_metadata_json:
+            chunk_metadata = json.loads(chunk_metadata_json)
+            chunks_info.append({
+                'chunk_index': chunk_index,
+                'size': len(bytes.fromhex(chunk_metadata['data'])),
+                'hash': chunk_metadata['hash'],
+                'timestamp': chunk_metadata['timestamp'],
+                'nodes': [node_id for node_id, node_info in cluster.nodes.items() 
+                         if node_info['status'] == 'active' and 
+                         node_info['client'].exists(chunk_key)]
+            })
+    
+    return jsonify({
+        'file_id': file_id,
+        'total_chunks': metadata['chunks'],
+        'chunks': chunks_info
+    })
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) 
