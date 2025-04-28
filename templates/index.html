@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedisCluster - Key-Value Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>RedisCluster - Key-Value Store</h1>
+    
+    <div class="section">
+        <h2>Key-Value Operations</h2>
+        <div>
+            <h3>Set Value</h3>
+            <input type="text" id="setKey" placeholder="Key">
+            <input type="text" id="setValue" placeholder="Value">
+            <button onclick="setValue()">Set</button>
+        </div>
+        
+        <div>
+            <h3>Get Value</h3>
+            <input type="text" id="getKey" placeholder="Key">
+            <button onclick="getValue()">Get</button>
+            <div id="getResult" class="result"></div>
+        </div>
+        
+        <div>
+            <h3>Delete Value</h3>
+            <input type="text" id="deleteKey" placeholder="Key">
+            <button onclick="deleteValue()">Delete</button>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>File Operations</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadFile()">Upload</button>
+        <div id="uploadResult" class="result"></div>
+    </div>
+
+    <script>
+        async function setValue() {
+            const key = document.getElementById('setKey').value;
+            const value = document.getElementById('setValue').value;
+            
+            try {
+                const response = await fetch(`/api/kv/${key}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ value })
+                });
+                const data = await response.json();
+                alert('Value set successfully');
+            } catch (error) {
+                alert('Error setting value');
+            }
+        }
+
+        async function getValue() {
+            const key = document.getElementById('getKey').value;
+            const resultDiv = document.getElementById('getResult');
+            
+            try {
+                const response = await fetch(`/api/kv/${key}`);
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data);
+            } catch (error) {
+                resultDiv.textContent = 'Error getting value';
+            }
+        }
+
+        async function deleteValue() {
+            const key = document.getElementById('deleteKey').value;
+            
+            try {
+                const response = await fetch(`/api/kv/${key}`, {
+                    method: 'DELETE'
+                });
+                const data = await response.json();
+                alert('Value deleted successfully');
+            } catch (error) {
+                alert('Error deleting value');
+            }
+        }
+
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const resultDiv = document.getElementById('uploadResult');
+            
+            if (fileInput.files.length === 0) {
+                alert('Please select a file');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch('/api/files', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data);
+            } catch (error) {
+                resultDiv.textContent = 'Error uploading file';
+            }
+        }
+    </script>
+</body>
+</html> 

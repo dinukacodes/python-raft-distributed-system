@@ -1,0 +1,18 @@
+18044:C 28 Apr 2025 09:39:35.218 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+18044:C 28 Apr 2025 09:39:35.218 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=18044, just started
+18044:C 28 Apr 2025 09:39:35.218 # Configuration loaded
+18044:M 28 Apr 2025 09:39:35.219 * monotonic clock: POSIX clock_gettime
+18044:M 28 Apr 2025 09:39:35.219 # Warning: Could not create server TCP listening socket 0.0.0.0:6379: bind: Address already in use
+18044:M 28 Apr 2025 09:39:35.219 # Failed listening on port 6379 (TCP), aborting.
+19117:C 28 Apr 2025 09:41:44.495 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+19117:C 28 Apr 2025 09:41:44.495 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=19117, just started
+19117:C 28 Apr 2025 09:41:44.495 # Configuration loaded
+19117:M 28 Apr 2025 09:41:44.496 * monotonic clock: POSIX clock_gettime
+19117:M 28 Apr 2025 09:41:44.496 # Warning: Could not create server TCP listening socket 0.0.0.0:6379: bind: Address already in use
+19117:M 28 Apr 2025 09:41:44.496 # Failed listening on port 6379 (TCP), aborting.
+25083:C 28 Apr 2025 09:55:15.960 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+25083:C 28 Apr 2025 09:55:15.960 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=25083, just started
+25083:C 28 Apr 2025 09:55:15.960 # Configuration loaded
+25083:M 28 Apr 2025 09:55:15.960 * monotonic clock: POSIX clock_gettime
+25083:M 28 Apr 2025 09:55:15.961 # Warning: Could not create server TCP listening socket 0.0.0.0:6379: bind: Address already in use
+25083:M 28 Apr 2025 09:55:15.961 # Failed listening on port 6379 (TCP), aborting.
