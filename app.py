@@ -3,12 +3,23 @@ import redis
 from flask import Flask, request, jsonify, send_file, render_template
 from werkzeug.utils import secure_filename
 from cluster_manager import ClusterManager
+from raft_manager import RaftManager
+from time_sync import TimeSynchronizer
 import hashlib
 import json
 import time
+from prometheus_client import make_wsgi_app
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 app = Flask(__name__)
 cluster = ClusterManager('config/cluster.yaml')
+raft = RaftManager('node1', cluster.nodes['node1']['client'])
+time_sync = TimeSynchronizer('node1')
+
+# Add Prometheus metrics endpoint
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
+    '/metrics': make_wsgi_app()
+})
 
 # Configuration
 UPLOAD_FOLDER = 'uploads'
@@ -298,6 +309,22 @@ def add_node():
         })
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route('/api/raft/status', methods=['GET'])
+def get_raft_status():
+    """Get current Raft consensus status"""
+    return jsonify({
+        'term': raft.current_term,
+        'state': raft.state,
+        'voted_for': raft.voted_for,
+        'commit_index': raft.commit_index,
+        'last_applied': raft.last_applied
+    })
+
+@app.route('/api/time/sync', methods=['GET'])
+def get_time_sync_status():
+    """Get time synchronization status"""
+    return jsonify(time_sync.get_metrics())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) 

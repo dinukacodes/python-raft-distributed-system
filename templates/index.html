@@ -133,6 +133,15 @@
         .add-node button {
             margin-top: 10px;
         }
+        .raft-info, .time-sync-info {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .raft-info p, .time-sync-info p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -145,6 +154,20 @@
         </div>
         <div class="quorum-status" id="quorumStatus">
             <!-- Quorum status will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Raft Consensus</h2>
+        <div id="raftStatus">
+            <!-- Raft status will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Time Synchronization</h2>
+        <div id="timeSyncStatus">
+            <!-- Time sync status will be populated by JavaScript -->
         </div>
     </div>
 
@@ -493,17 +516,62 @@
             }
         }
 
-        // Update the periodic status update to include node controls
+        // Update Raft status
+        async function updateRaftStatus() {
+            try {
+                const response = await fetch('/api/raft/status');
+                const data = await response.json();
+                const raftStatusDiv = document.getElementById('raftStatus');
+                
+                raftStatusDiv.innerHTML = `
+                    <div class="raft-info">
+                        <p><strong>Current Term:</strong> ${data.term}</p>
+                        <p><strong>State:</strong> ${data.state}</p>
+                        <p><strong>Voted For:</strong> ${data.voted_for || 'None'}</p>
+                        <p><strong>Commit Index:</strong> ${data.commit_index}</p>
+                        <p><strong>Last Applied:</strong> ${data.last_applied}</p>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error updating Raft status:', error);
+            }
+        }
+
+        // Update time sync status
+        async function updateTimeSyncStatus() {
+            try {
+                const response = await fetch('/api/time/sync');
+                const data = await response.json();
+                const timeSyncDiv = document.getElementById('timeSyncStatus');
+                
+                timeSyncDiv.innerHTML = `
+                    <div class="time-sync-info">
+                        <p><strong>Time Drift:</strong> ${data.time_drift_ms.toFixed(2)} ms</p>
+                        <p><strong>Last NTP Sync:</strong> ${new Date(data.last_ntp_sync * 1000).toLocaleString()}</p>
+                        <p><strong>Logical Clock:</strong> ${data.logical_clock}</p>
+                        <p><strong>NTP Sync Status:</strong> ${data.ntp_sync_status === 1 ? 'Synchronized' : 'Not Synchronized'}</p>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error updating time sync status:', error);
+            }
+        }
+
+        // Update the periodic status update to include Raft and time sync
         setInterval(() => {
             updateClusterStatus();
             updateNodeControls();
             updateFileList();
+            updateRaftStatus();
+            updateTimeSyncStatus();
         }, 5000);
 
         // Initial updates
         updateClusterStatus();
         updateNodeControls();
         updateFileList();
+        updateRaftStatus();
+        updateTimeSyncStatus();
     </script>
 </body>
 </html> 
