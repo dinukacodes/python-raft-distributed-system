@@ -1,0 +1,21 @@
+nodes:
+  - id: node1
+    host: localhost
+    port: 6379
+    memory_limit: 512MB
+    role: primary
+  - id: node2
+    host: localhost
+    port: 6380
+    memory_limit: 512MB
+    role: replica
+  - id: node3
+    host: localhost
+    port: 6381
+    memory_limit: 512MB
+    role: replica
+
+settings:
+  replication_factor: 2
+  heartbeat_interval: 5
+  chunk_size: 1048576  # 1MB 

@@ -39,6 +39,16 @@
             background-color: #f8f8f8;
             border-radius: 4px;
         }
+        .file-list {
+            margin-top: 20px;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
@@ -69,9 +79,23 @@
     
     <div class="section">
         <h2>File Operations</h2>
-        <input type="file" id="fileInput">
-        <button onclick="uploadFile()">Upload</button>
-        <div id="uploadResult" class="result"></div>
+        <div>
+            <h3>Upload File</h3>
+            <input type="file" id="fileInput">
+            <button onclick="uploadFile()">Upload</button>
+            <div id="uploadResult" class="result"></div>
+        </div>
+
+        <div>
+            <h3>Download File</h3>
+            <input type="text" id="downloadFilename" placeholder="Filename">
+            <button onclick="downloadFile()">Download</button>
+        </div>
+
+        <div class="file-list">
+            <h3>Available Files</h3>
+            <div id="fileList" class="result"></div>
+        </div>
     </div>
 
     <script>
@@ -144,6 +168,68 @@
                 resultDiv.textContent = 'Error uploading file';
             }
         }
+
+        async function downloadFile() {
+            const filename = document.getElementById('downloadFilename').value;
+            if (!filename) {
+                alert('Please enter a filename');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/files/${filename}`);
+                if (!response.ok) {
+                    throw new Error('File not found');
+                }
+                
+                // Create a blob from the response
+                const blob = await response.blob();
+                
+                // Create a download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                
+                // Clean up
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                alert('Error downloading file: ' + error.message);
+            }
+        }
+
+        async function listFiles() {
+            const fileListDiv = document.getElementById('fileList');
+            try {
+                // Get all keys from Redis that start with 'file:'
+                const response = await fetch('/api/files');
+                const data = await response.json();
+                
+                if (data.files && data.files.length > 0) {
+                    fileListDiv.innerHTML = data.files.map(file => `
+                        <div class="file-item">
+                            <span>${file}</span>
+                            <button onclick="downloadFileByName('${file}')">Download</button>
+                        </div>
+                    `).join('');
+                } else {
+                    fileListDiv.textContent = 'No files available';
+                }
+            } catch (error) {
+                fileListDiv.textContent = 'Error listing files';
+            }
+        }
+
+        async function downloadFileByName(filename) {
+            document.getElementById('downloadFilename').value = filename;
+            await downloadFile();
+        }
+
+        // Load file list when page loads
+        document.addEventListener('DOMContentLoaded', listFiles);
     </script>
 </body>
 </html> 
