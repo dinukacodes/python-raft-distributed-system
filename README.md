@@ -55,6 +55,16 @@ A lightweight distributed storage system demo with Redis and Flask.
 - File metadata is stored in Redis
 - Supported file types: txt, pdf, png, jpg, jpeg, gif
 
+## Team Members
+
+| Name | Email | Student ID |
+|------|--------|------------|
+| D.T.Jayakody | it23286382@my.sliit.lk | it23286382 |
+| Salah I | it23195752@my.sliit.lk | it23195752 |
+| Samarajeewa B D G M M | it23279070@my.sliit.lk | it23279070 |
+| Apiram R | it23444782@my.sliit.lk | it23444782 |
+
+
 ## Memory Optimization
 
 - Redis is configured with a 256MB memory limit
