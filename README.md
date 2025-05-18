@@ -1,6 +1,14 @@
 # RedisCluster - Milestone 1
 
 A lightweight distributed storage system demo with Redis and Flask.
+## Team Members
+
+| Name | Email | Student ID |
+|------|--------|------------|
+| D.T.Jayakody | it23286382@my.sliit.lk | it23286382 |
+| Salah I | it23195752@my.sliit.lk | it23195752 |
+| Samarajeewa B D G M M | it23279070@my.sliit.lk | it23279070 |
+| Apiram R | it23444782@my.sliit.lk | it23444782 |
 
 ## Features
 

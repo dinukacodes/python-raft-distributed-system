@@ -1,0 +1,722 @@
+2025-04-29 10:58:55,795 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 10:58:55,795 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 10:58:55,795 - INFO - [raft_consensus] - Initializing Redis state for node node0
+2025-04-29 10:58:55,796 - ERROR - [raft_consensus] - Error initializing state for node node0: 'NoneType' object has no attribute 'decode'
+2025-04-29 10:59:22,493 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 10:59:22,493 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 10:59:22,493 - INFO - [raft_consensus] - Initializing Redis state for node node0
+2025-04-29 10:59:22,493 - INFO - [raft_consensus] - Redis state initialized for node node0
+2025-04-29 10:59:22,493 - INFO - [raft_consensus] - 👥 Node node0 becoming follower for term 1697
+2025-04-29 10:59:22,493 - INFO - [raft_consensus] - ✅ Node node0 transitioned to follower state
+2025-04-29 10:59:22,494 - INFO - [raft_consensus] - Node node0 initialized as FOLLOWER
+2025-04-29 10:59:22,502 - INFO - [raft_consensus] - Node node0 initialized as FOLLOWER
+2025-04-29 10:59:22,503 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,503 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,508 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,508 - INFO - [raft_consensus] - Initializing Raft node node1
+2025-04-29 10:59:22,508 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,508 - INFO - [raft_consensus] - Initializing Raft node node1
+2025-04-29 10:59:22,508 - INFO - [raft_consensus] - Initializing Redis state for node node1
+2025-04-29 10:59:22,509 - INFO - [raft_consensus] - Redis state initialized for node node1
+2025-04-29 10:59:22,509 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1697
+2025-04-29 10:59:22,509 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 10:59:22,509 - INFO - [raft_consensus] - Node node1 initialized as FOLLOWER
+2025-04-29 10:59:22,511 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,513 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,514 - INFO - [raft_consensus] - Node node1 initialized as FOLLOWER
+2025-04-29 10:59:22,514 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,516 - INFO - [raft_consensus] - Initializing Raft node node2
+2025-04-29 10:59:22,517 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,517 - INFO - [raft_consensus] - Initializing Raft node node2
+2025-04-29 10:59:22,517 - INFO - [raft_consensus] - Initializing Redis state for node node2
+2025-04-29 10:59:22,517 - INFO - [raft_consensus] - Redis state initialized for node node2
+2025-04-29 10:59:22,517 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1697
+2025-04-29 10:59:22,517 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 10:59:22,517 - INFO - [raft_consensus] - Node node2 initialized as FOLLOWER
+2025-04-29 10:59:22,519 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,523 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,523 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,524 - INFO - [raft_consensus] - Node node2 initialized as FOLLOWER
+2025-04-29 10:59:22,526 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,611 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,611 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,613 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,613 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,618 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,619 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,620 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,621 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,630 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,630 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,634 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,634 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,715 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,716 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,717 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,717 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,723 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,723 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,724 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,726 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,738 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,739 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,742 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,742 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,820 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,820 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,821 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,822 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,826 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,828 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,828 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,829 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,846 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,846 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,850 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,850 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,924 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,924 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,926 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,926 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,929 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,930 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,932 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,933 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:22,955 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,955 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:22,957 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:22,957 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,029 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,029 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,031 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,031 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,035 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,035 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,037 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,038 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,061 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,062 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,064 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,064 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,134 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,134 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,137 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,137 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,140 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,140 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,142 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,143 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,168 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,170 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,171 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,171 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,239 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,240 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,242 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,242 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,245 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,245 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,246 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,247 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,274 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,275 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,276 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,277 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,344 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,345 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,346 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,347 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,349 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,349 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,351 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,351 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,380 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,381 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,382 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,383 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,449 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,449 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,451 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,451 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,453 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,453 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,455 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,455 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,485 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,485 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,487 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,487 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,553 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,554 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,555 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,557 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,558 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,558 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,559 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,560 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,590 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,592 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,592 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,594 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,657 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,658 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,659 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,662 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,662 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,662 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,664 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,664 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,699 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,700 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,702 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,702 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,760 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,761 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,764 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,766 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,766 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,766 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,768 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,768 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,809 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,809 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,812 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,813 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,863 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,865 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,867 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,869 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,870 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,870 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,872 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,872 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,916 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,917 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,918 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,919 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,967 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,968 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,972 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:23,973 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,975 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,975 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:23,978 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:23,978 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,021 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,021 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,023 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,023 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,070 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,071 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,076 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,077 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,080 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,081 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,085 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,085 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,128 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,128 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,130 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,130 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,173 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,176 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,179 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,181 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,189 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,192 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,192 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,195 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,233 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,233 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,235 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,235 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,278 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,279 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,282 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,283 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,298 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,298 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,301 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,302 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,341 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,341 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,342 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,343 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,381 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,382 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,385 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,386 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,406 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,409 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,409 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,411 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,445 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,445 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,447 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,447 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,484 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,485 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,487 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,489 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,513 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,513 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,515 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,515 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,551 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,551 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,554 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,554 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,587 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,588 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,590 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,592 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,618 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,618 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,621 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,621 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,658 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,658 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,664 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,664 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,690 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,691 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,693 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,695 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,723 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,723 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,725 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,726 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,769 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,770 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,770 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,772 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,797 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,797 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,799 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,799 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,828 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,828 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,831 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,831 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,874 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,875 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,876 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,876 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,902 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,902 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,904 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,904 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,933 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,934 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,935 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,935 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:24,984 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,985 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:24,985 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:24,986 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,008 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,010 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,012 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,013 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,039 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,039 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,043 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,044 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,088 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,089 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,090 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,090 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,118 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,119 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,123 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,123 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,146 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,146 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,147 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,148 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,192 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,193 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,193 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,194 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,226 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,228 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,228 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,230 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,252 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,253 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,257 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,258 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,297 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,299 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,300 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,302 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,332 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,334 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,334 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,336 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,360 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,360 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,362 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,363 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,403 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,403 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,405 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,405 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,437 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,439 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,440 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,440 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,466 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,467 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,471 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,471 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,507 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,508 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,510 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,510 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,543 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,543 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,545 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,545 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,573 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,574 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,576 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,576 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,612 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,613 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,615 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,615 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,648 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,648 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,650 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,650 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,678 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,678 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,680 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,681 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,718 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,718 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,719 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,720 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,753 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,755 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,756 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,756 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,784 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,784 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,787 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,787 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,822 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,822 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,824 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,824 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,859 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,859 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,861 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,861 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,891 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,892 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,897 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,897 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,930 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,932 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:25,932 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,934 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,969 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,969 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:25,972 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:25,972 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,002 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,004 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,006 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,007 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,038 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,038 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,040 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,040 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,075 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,075 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,078 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,078 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,109 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,110 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,112 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,113 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,143 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,143 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,146 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,146 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,183 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,183 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,186 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,186 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,215 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,217 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,219 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,220 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,249 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,249 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,251 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,252 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,289 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,289 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,291 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,291 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,322 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,323 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,325 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,325 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,355 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,356 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,357 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,358 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,394 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,394 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,396 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,396 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,429 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,429 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,432 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,432 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,460 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,461 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,463 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,463 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,500 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,500 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,502 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,502 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,535 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,535 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,538 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,538 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,568 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,568 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,570 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,570 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,605 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,606 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,608 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,608 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,640 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,640 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,643 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,643 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,674 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,675 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,679 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,679 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,715 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,717 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,717 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,718 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,746 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,746 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,749 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,749 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,781 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,782 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,783 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,784 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,820 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,822 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,822 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,823 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,851 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,852 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,854 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,854 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,886 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,886 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,888 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,888 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,925 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,926 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,928 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,928 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,958 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,958 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,961 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,961 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:26,991 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,992 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:26,992 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:26,993 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,031 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,031 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,033 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,033 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,065 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,066 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,070 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,070 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,098 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,098 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,100 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,101 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,137 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,138 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,139 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,140 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,172 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,172 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,174 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,175 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,204 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,205 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,205 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,206 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,242 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,243 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,244 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,245 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,277 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,277 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,279 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,280 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,308 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,309 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,310 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,311 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,347 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,348 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,350 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,350 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,382 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,382 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,385 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,385 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,413 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,413 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,415 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,415 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,452 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,454 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,454 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,455 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,487 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,488 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,490 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,491 - WARNING - [raft_consensus] - Node node2 appears to be down
+2025-04-29 10:59:27,518 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,518 - WARNING - [raft_consensus] - Node node0 appears to be down
+2025-04-29 10:59:27,520 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 10:59:27,520 - WARNING - [raft_consensus] - Node node1 appears to be down
+2025-04-29 11:00:26,089 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 11:00:26,090 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 11:00:26,090 - INFO - [raft_consensus] - Initializing Redis state for node node0
+2025-04-29 11:00:26,090 - INFO - [raft_consensus] - Redis state initialized for node node0
+2025-04-29 11:00:26,090 - INFO - [raft_consensus] - 👥 Node node0 becoming follower for term 1697
+2025-04-29 11:00:26,090 - INFO - [raft_consensus] - ✅ Node node0 transitioned to follower state
+2025-04-29 11:00:26,090 - INFO - [raft_consensus] - Node node0 initialized as FOLLOWER
+2025-04-29 11:00:26,092 - INFO - [raft_consensus] - Node node0 initialized as FOLLOWER
+2025-04-29 11:00:26,093 - INFO - [raft_consensus] - Initializing Raft node node1
+2025-04-29 11:00:26,093 - INFO - [raft_consensus] - Initializing Raft node node1
+2025-04-29 11:00:26,093 - INFO - [raft_consensus] - Initializing Redis state for node node1
+2025-04-29 11:00:26,093 - INFO - [raft_consensus] - Redis state initialized for node node1
+2025-04-29 11:00:26,094 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1697
+2025-04-29 11:00:26,094 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:26,094 - INFO - [raft_consensus] - Node node1 initialized as FOLLOWER
+2025-04-29 11:00:26,097 - INFO - [raft_consensus] - Node node1 initialized as FOLLOWER
+2025-04-29 11:00:26,098 - INFO - [raft_consensus] - Initializing Raft node node2
+2025-04-29 11:00:26,098 - INFO - [raft_consensus] - Initializing Raft node node2
+2025-04-29 11:00:26,098 - INFO - [raft_consensus] - Initializing Redis state for node node2
+2025-04-29 11:00:26,098 - INFO - [raft_consensus] - Redis state initialized for node node2
+2025-04-29 11:00:26,098 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1697
+2025-04-29 11:00:26,099 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:26,099 - INFO - [raft_consensus] - Node node2 initialized as FOLLOWER
+2025-04-29 11:00:26,102 - INFO - [raft_consensus] - Node node2 initialized as FOLLOWER
+2025-04-29 11:00:27,477 - INFO - [raft_consensus] - 🔄 Node node0 starting election for term 1698
+2025-04-29 11:00:27,477 - INFO - [raft_consensus] - 📢 Node node0 is now a candidate for term 1698
+2025-04-29 11:00:27,478 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1698 > current term 1697
+2025-04-29 11:00:27,478 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1698 > current term 1697
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1698 > current term 1697
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1698
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1698 > current term 1697
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1698
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1698
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1698
+2025-04-29 11:00:27,479 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:27,480 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:27,480 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:27,480 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:27,486 - INFO - [raft_consensus] - 🔄 Node node0 starting election for term 1699
+2025-04-29 11:00:27,486 - INFO - [raft_consensus] - 📢 Node node0 is now a candidate for term 1699
+2025-04-29 11:00:27,488 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1699 > current term 1698
+2025-04-29 11:00:27,488 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1699 > current term 1698
+2025-04-29 11:00:27,488 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1699 > current term 1698
+2025-04-29 11:00:27,489 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1699 > current term 1698
+2025-04-29 11:00:27,489 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1699
+2025-04-29 11:00:27,489 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1699
+2025-04-29 11:00:27,489 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1699
+2025-04-29 11:00:27,489 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1699
+2025-04-29 11:00:27,489 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:27,490 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:27,490 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:27,490 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:28,502 - INFO - [raft_consensus] - 🔄 Node node2 starting election for term 1700
+2025-04-29 11:00:28,503 - INFO - [raft_consensus] - 📢 Node node2 is now a candidate for term 1700
+2025-04-29 11:00:28,504 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1700 > current term 1699
+2025-04-29 11:00:28,504 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1700
+2025-04-29 11:00:28,504 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1700 > current term 1699
+2025-04-29 11:00:28,504 - INFO - [raft_consensus] - Node node0 stepping down - received higher term 1700 > current term 1699
+2025-04-29 11:00:28,505 - INFO - [raft_consensus] - Node node0 stepping down - received higher term 1700 > current term 1699
+2025-04-29 11:00:28,505 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1700
+2025-04-29 11:00:28,505 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:28,505 - INFO - [raft_consensus] - 👥 Node node0 becoming follower for term 1700
+2025-04-29 11:00:28,505 - INFO - [raft_consensus] - 👥 Node node0 becoming follower for term 1700
+2025-04-29 11:00:28,506 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:28,507 - INFO - [raft_consensus] - ✅ Node node0 transitioned to follower state
+2025-04-29 11:00:28,507 - ERROR - [raft_consensus] - Error processing message: Watched variable changed.
+2025-04-29 11:00:28,512 - INFO - [raft_consensus] - 🔄 Node node2 starting election for term 1701
+2025-04-29 11:00:28,513 - INFO - [raft_consensus] - 📢 Node node2 is now a candidate for term 1701
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1701 > current term 1700
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1701 > current term 1700
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - Node node0 stepping down - received higher term 1701 > current term 1700
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1701
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - Node node0 stepping down - received higher term 1701 > current term 1700
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1701
+2025-04-29 11:00:28,514 - INFO - [raft_consensus] - 👥 Node node0 becoming follower for term 1701
+2025-04-29 11:00:28,515 - INFO - [raft_consensus] - 👥 Node node0 becoming follower for term 1701
+2025-04-29 11:00:28,515 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:28,515 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:28,515 - INFO - [raft_consensus] - ✅ Node node0 transitioned to follower state
+2025-04-29 11:00:28,515 - INFO - [raft_consensus] - ✅ Node node0 transitioned to follower state
+2025-04-29 11:00:30,189 - INFO - [raft_consensus] - 🔄 Node node0 starting election for term 1702
+2025-04-29 11:00:30,190 - INFO - [raft_consensus] - 📢 Node node0 is now a candidate for term 1702
+2025-04-29 11:00:30,194 - INFO - [raft_consensus] - 🔄 Node node0 starting election for term 1703
+2025-04-29 11:00:30,196 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1702 > current term 1701
+2025-04-29 11:00:30,196 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1702 > current term 1701
+2025-04-29 11:00:30,196 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1702 > current term 1701
+2025-04-29 11:00:30,197 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1702
+2025-04-29 11:00:30,197 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1702 > current term 1701
+2025-04-29 11:00:30,197 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1702
+2025-04-29 11:00:30,197 - INFO - [raft_consensus] - 📢 Node node0 is now a candidate for term 1703
+2025-04-29 11:00:30,197 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1702
+2025-04-29 11:00:30,198 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1702
+2025-04-29 11:00:30,198 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:30,198 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:30,199 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:30,200 - ERROR - [raft_consensus] - Error processing message: Watched variable changed.
+2025-04-29 11:00:30,201 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1703 > current term 1702
+2025-04-29 11:00:30,201 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1703 > current term 1702
+2025-04-29 11:00:30,201 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1703
+2025-04-29 11:00:30,202 - INFO - [raft_consensus] - Node node1 stepping down - received higher term 1703 > current term 1702
+2025-04-29 11:00:30,202 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1703
+2025-04-29 11:00:30,202 - INFO - [raft_consensus] - 👥 Node node1 becoming follower for term 1703
+2025-04-29 11:00:30,202 - INFO - [raft_consensus] - Node node2 stepping down - received higher term 1703 > current term 1702
+2025-04-29 11:00:30,202 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:30,203 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:00:30,203 - INFO - [raft_consensus] - 👥 Node node2 becoming follower for term 1703
+2025-04-29 11:00:30,203 - INFO - [raft_consensus] - ✅ Node node1 transitioned to follower state
+2025-04-29 11:00:30,205 - INFO - [raft_consensus] - ✅ Node node2 transitioned to follower state
+2025-04-29 11:01:40,588 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 11:01:40,589 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 11:01:40,589 - INFO - [raft_consensus] - Initializing Redis state for node node0
+2025-04-29 11:01:40,590 - INFO - [raft_consensus] - Redis state initialized for node node0
+2025-04-29 11:01:40,590 - ERROR - [raft_consensus] - Error initializing state for node node0: 'RaftConsensus' object has no attribute '_become_follower'
+2025-04-29 11:02:07,718 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 11:02:07,718 - INFO - [raft_consensus] - Initializing Raft node node0
+2025-04-29 11:02:07,718 - INFO - [raft_consensus] - Initializing Redis state for node node0
+2025-04-29 11:02:07,718 - INFO - [raft_consensus] - Redis state initialized for node node0
+2025-04-29 11:02:07,718 - ERROR - [raft_consensus] - Error initializing state for node node0: 'RaftConsensus' object has no attribute '_reset_election_timer'
