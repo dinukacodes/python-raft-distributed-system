@@ -1,6 +1,0 @@
-187642:C 28 Apr 2025 15:01:13.610 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
-187642:C 28 Apr 2025 15:01:13.610 # Redis version=7.0.15, bits=64, commit=00000000, modified=0, pid=187642, just started
-187642:C 28 Apr 2025 15:01:13.610 # Configuration loaded
-187642:M 28 Apr 2025 15:01:13.610 * monotonic clock: POSIX clock_gettime
-187642:M 28 Apr 2025 15:01:13.610 # Warning: Could not create server TCP listening socket *:6381: bind: Address already in use
-187642:M 28 Apr 2025 15:01:13.610 # Failed listening on port 6381 (TCP), aborting.
